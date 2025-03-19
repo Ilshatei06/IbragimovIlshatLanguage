@@ -66,7 +66,6 @@
                             <TextBlock Text=" Кол-во посещений: " HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap" Margin="10 0 0 0"></TextBlock>
                             <TextBlock Text="{Binding VisitCount}" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap"></TextBlock>
                         </StackPanel>
-
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
