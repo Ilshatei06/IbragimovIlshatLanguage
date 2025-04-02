@@ -109,6 +109,8 @@ namespace IbragimovIlshatLanguage
 
             _currentClient.GenderCode = RButtonM.IsChecked == true ? "1" : "2";
 
+            _currentClient.RegistrationDate = DateTime.Now;
+
             if (_currentClient.ID == 0)
                 IbragimovIlshatLanguageEntities.GetContext().Client.Add(_currentClient);
             try
