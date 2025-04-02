@@ -31,15 +31,16 @@ namespace IbragimovIlshatLanguage
             get
             {
                 if (!string.IsNullOrEmpty(Patronymic))
-                    return LastName + " " + FirstName + " " + Patronymic;
+                    return FirstName + " " + LastName + " " + Patronymic;
                 else
-                    return LastName + " " + FirstName;
+                    return FirstName + " " + LastName;
             }
         }
         public string GenderCode { get; set; }
         public string Phone { get; set; }
         public string PhotoPath { get; set; }
         public Nullable<System.DateTime> Birthday { get; set; }
+
         public string Email { get; set; }
         public System.DateTime RegistrationDate { get; set; }
 
@@ -88,6 +89,23 @@ namespace IbragimovIlshatLanguage
                 return "";
             }
         }
+
+        public DateTime LastVisitDate
+        {
+            get
+            {
+                var cur = ClientService.OrderBy(p => p.StartTime).LastOrDefault();
+
+                if (cur != null)
+                    return cur.StartTime;
+                else
+                    return DateTime.MinValue;
+
+            }
+        }
+
+
+
         public virtual Gender Gender { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 
