@@ -76,11 +76,12 @@ namespace IbragimovIlshatLanguage
                 errors.AppendLine("Укажите Email!");
             else
             {
-                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                string pattern = @"^[a-zA-Z0-9._%+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*\.)+[a-zA-Z]{2,}$";
                 if (!Regex.IsMatch(_currentClient.Email, pattern))
                     errors.AppendLine("Укажите правильный Email!");
                 
             }
+
 
             if (string.IsNullOrWhiteSpace(_currentClient.Phone))
                 errors.AppendLine("Укажите номер телефона!");
